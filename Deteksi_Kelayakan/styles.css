@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f39f5a; /* Light beige background */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* CSS for Responsive Navbar */
+nav {
+  background-color: #e18207; /* Warna latar belakang navbar */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end; /* Menyusun elemen secara rata di navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.brand {
+  position: absolute;
+  z-index: 1111;
+  left: 0;
+  top: 10px;
+  margin-left: 20px;
+}
+
+.brand h1 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+a:hover {
+  background-color: #f39f5a; /* Warna latar belakang saat dihover */
+  border-radius: 5px; /* Sudut bulat saat dihover */
+  /* padding: 5px 5px; */
+  transition: background-color 0.3s ease;
+  opacity: 1;
+}
+
+.toggle-button {
+  display: none; /* Defaultnya tombol toggle disembunyikan */
+  cursor: pointer;
+}
+
+.toggle-button div {
+  width: 30px; /* Lebar garis toggle */
+  height: 4px; /* Tinggi garis toggle */
+  background-color: #fff; /* Warna garis toggle */
+  margin: 5px 0; /* Jarak antara garis toggle */
+  transition: transform 0.3s ease; /* Animasi saat tombol toggle di klik */
+}
+
+/* Styling tombol toggle ketika menu aktif */
+.toggle-button.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* Rotasi dan translasi untuk tampilan seperti 'X' */
+}
+
+.toggle-button.active div:nth-child(2) {
+  opacity: 0; /* Sembunyikan garis tengah saat tombol toggle aktif */
+}
+
+.toggle-button.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* Rotasi dan translasi untuk tampilan seperti 'X' */
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-right: 20px; /* Jarak antara setiap item navigasi */
+  margin-top: 10.5px;
+  margin-bottom: 11px;
+}
+
+.navbar-links li:last-child {
+  margin-right: 0; /* Hapus margin kanan untuk item navigasi terakhir */
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #fff; /* Warna teks tautan navigasi */
+  font-size: 15px; /* Ukuran teks tautan navigasi */
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+  .brand {
+    font-size: 20px; /* Ukuran teks merek saat tampil di perangkat seluler */
+  }
+
+  .toggle-button {
+    display: block; /* Tampilkan tombol toggle di layar kecil */
+  }
+
+  .navbar-links {
+    display: none; /* Sembunyikan daftar tautan navigasi di layar kecil */
+    flex-direction: column; /* Atur tata letak ul menjadi kolom */
+    align-items: center; /* Pusatkan item navigasi */
+    position: absolute; /* Ubah posisi agar tumpang tindih */
+    top: 52.5px; /* Atur jarak dari atas */
+    left: 0;
+    right: 0;
+    background-color: #e18207; /* Warna latar belakang navbar */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  }
+
+  .navbar-links.active {
+    display: flex; /* Tampilkan daftar tautan navigasi saat class active ditambahkan */
+  }
+
+  .navbar-links li {
+    margin: 10px 0; /* Atur jarak margin */
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #cd7a32; /* Warm brown background */
+  border-radius: 5px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  text-align: center; /* Center align content */
+  margin-top: 100px;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 27px;
+  font-family: sans-serif;
+  color: white; /* White text color */
+  margin-bottom: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input */
+input[type="number"] {
+  width: 50px;
+  height: 20px; /* Slightly wider input */
+  padding: 5px;
+  margin-bottom: 20px; /* Space below input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px;
+  text-align: center; /* Center text */
+  font-size: 16px; /* Increase font size */
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2e398d; /* Dark blue background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #606060; /* Grey background on hover */
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333; /* Dark grey text */
+}
+
+.footer {
+  height: 70px;
+  width: 100%;
+  background-color: #e67e22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsiveness for Mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 100px;
+  }
+
+  input[type="number"],
+  button {
+    width: 100%; /* Lebar input dan tombol menjadi 100% di layar kecil */
+  }
+}

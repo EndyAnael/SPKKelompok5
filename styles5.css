@@ -1,0 +1,307 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f39f5a; /* Light beige background */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* CSS for Responsive Navbar */
+nav {
+  background-color: #e18207; /* Warna latar belakang navbar */
+  padding: 10px 20px; /* Padding di sekitar elemen navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Menyusun elemen secara rata di navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+a:hover {
+  background-color: #f39f5a; /* Warna latar belakang saat dihover */
+  border-radius: 5px; /* Sudut bulat saat dihover */
+  /* padding: 5px; */
+  transition: background-color 0.3s ease;
+  opacity: 1;
+}
+
+.brand {
+  font-size: 20px; /* Ukuran teks merek */
+  color: #fff; /* Warna teks merek */
+  font-family: "Poppins", sans-serif;
+}
+
+.toggle-button {
+  display: none; /* Defaultnya tombol toggle disembunyikan */
+  cursor: pointer;
+}
+
+.toggle-button div {
+  width: 30px; /* Lebar garis toggle */
+  height: 4px; /* Tinggi garis toggle */
+  background-color: #fff; /* Warna garis toggle */
+  margin: 5px 0; /* Jarak antara garis toggle */
+  transition: transform 0.3s ease; /* Animasi saat tombol toggle di klik */
+}
+
+/* Styling tombol toggle ketika menu aktif */
+.toggle-button.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* Rotasi dan translasi untuk tampilan seperti 'X' */
+}
+
+.toggle-button.active div:nth-child(2) {
+  opacity: 0; /* Sembunyikan garis tengah saat tombol toggle aktif */
+}
+
+.toggle-button.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* Rotasi dan translasi untuk tampilan seperti 'X' */
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-right: 20px; /* Jarak antara setiap item navigasi */
+  transition: 1s all;
+}
+
+.navbar-links li:hover {
+  transition: 1s all;
+  border-bottom: 2px solid black;
+}
+
+.navbar-links li:last-child {
+  margin-right: 0; /* Hapus margin kanan untuk item navigasi terakhir */
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px; /* Ukuran teks tautan navigasi */
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+  .brand {
+    font-size: 20px; /* Ukuran teks merek saat tampil di perangkat seluler */
+  }
+
+  .toggle-button {
+    display: block; /* Tampilkan tombol toggle di layar kecil */
+  }
+
+  .navbar-links {
+    display: none; /* Sembunyikan daftar tautan navigasi di layar kecil */
+    flex-direction: column; /* Atur tata letak ul menjadi kolom */
+    align-items: center; /* Pusatkan item navigasi */
+    position: absolute; /* Ubah posisi agar tumpang tindih */
+    top: 60px; /* Atur jarak dari atas */
+    left: 0;
+    right: 0;
+    background-color: #e18207; /* Warna latar belakang navbar */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  }
+
+  .navbar-links.active {
+    display: flex; /* Tampilkan daftar tautan navigasi saat class active ditambahkan */
+  }
+
+  .navbar-links li {
+    margin: 10px 0; /* Atur jarak margin */
+  }
+}
+
+/* content menu ================================================*/
+.main-content {
+  /* border: 2px solid black; */
+  padding: 40px;
+  margin-top: 80px;
+}
+
+.menu {
+  background-color: #e67e22;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  border-radius: 17px;
+  padding: 30px;
+}
+
+.container-1,
+.container-2 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 20px;
+}
+
+.container-1 .product {
+  display: flex;
+}
+
+.container-1 .judul,
+.container-2 .judul {
+  display: block;
+  justify-content: center;
+}
+
+.container-1 .judul h1,
+.container-2 .judul h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.container-1 .judul img,
+.container-2 .judul img {
+  width: 200px;
+  border-radius: 30px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.container-1 .info p,
+.container-2 .info p {
+  text-align: justify;
+  margin-top: 80px;
+}
+.container-2 .info p {
+  margin-top: 105px;
+}
+
+.info button {
+  background-color: #f05941;
+  padding: 7px;
+  width: 80px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* MODAL DETAIL -------------------------------------------*/
+/* Modal container */
+.modal-ikan {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-jasuke {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-con {
+  background-color: #d84a4a;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  animation: modalopen 0.5s;
+}
+
+/* Animation for modal */
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Heading */
+.modal-con h2 {
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  color: #333;
+}
+
+/* Paragraph */
+.modal-con p {
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.footer {
+  height: 70px;
+  width: 100%;
+  background-color: #e67e22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsiveness for Mobile */
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding: 10px; /* Kurangi padding pada konten utama di layar kecil */
+  }
+
+  .container-1,
+  .container-2 {
+    margin: 10px 0; /* Atur margin atas dan bawah */
+  }
+
+  .container-1 .judul img,
+  .container-2 .judul img {
+    max-width: 150px; /* Kurangi lebar maksimum gambar di layar kecil */
+  }
+
+  .info button {
+    max-width: 120px; /* Kurangi lebar maksimum tombol di layar kecil */
+  }
+}

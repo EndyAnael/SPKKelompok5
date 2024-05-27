@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f39f5a; /* Light beige background */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* CSS for Responsive Navbar */
+nav {
+  background-color: #e18207; /* Warna latar belakang navbar */
+  padding: 10px 20px; /* Padding di sekitar elemen navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Menyusun elemen secara rata di navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 20px; /* Ukuran teks merek */
+  color: #fff; /* Warna teks merek */
+  font-family: "Poppins", sans-serif;
+}
+
+.toggle-button {
+  display: none; /* Defaultnya tombol toggle disembunyikan */
+  cursor: pointer;
+}
+
+.toggle-button div {
+  width: 30px; /* Lebar garis toggle */
+  height: 4px; /* Tinggi garis toggle */
+  background-color: #fff; /* Warna garis toggle */
+  margin: 5px 0; /* Jarak antara garis toggle */
+  transition: transform 0.3s ease; /* Animasi saat tombol toggle di klik */
+}
+
+/* Styling tombol toggle ketika menu aktif */
+.toggle-button.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* Rotasi dan translasi untuk tampilan seperti 'X' */
+}
+
+.toggle-button.active div:nth-child(2) {
+  opacity: 0; /* Sembunyikan garis tengah saat tombol toggle aktif */
+}
+
+.toggle-button.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* Rotasi dan translasi untuk tampilan seperti 'X' */
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-right: 20px; /* Jarak antara setiap item navigasi */
+}
+
+.navbar-links li:last-child {
+  margin-right: 0; /* Hapus margin kanan untuk item navigasi terakhir */
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #fff; /* Warna teks tautan navigasi */
+  font-size: 15px; /* Ukuran teks tautan navigasi */
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+  .brand {
+    font-size: 20px; /* Ukuran teks merek saat tampil di perangkat seluler */
+  }
+
+  .toggle-button {
+    display: block; /* Tampilkan tombol toggle di layar kecil */
+  }
+
+  .navbar-links {
+    display: none; /* Sembunyikan daftar tautan navigasi di layar kecil */
+    flex-direction: column; /* Atur tata letak ul menjadi kolom */
+    align-items: center; /* Pusatkan item navigasi */
+    position: absolute; /* Ubah posisi agar tumpang tindih */
+    top: 60px; /* Atur jarak dari atas */
+    left: 0;
+    right: 0;
+    background-color: #e18207; /* Warna latar belakang navbar */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  }
+
+  .navbar-links.active {
+    display: flex; /* Tampilkan daftar tautan navigasi saat class active ditambahkan */
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+}
+
+.container {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+#penjual-list h1 {
+  margin: 30px;
+}
+
+.penjual {
+  margin-bottom: 20px;
+  background-color: #cd7a32;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  /* border: 1px solid #333030; */
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  width: 600px;
+}
+
+.penjual img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* float: left; */
+}
+
+.penjual h2 {
+  margin-top: 0;
+}
+
+header {
+  background-color: #3d322e;
+  color: #dfafaf;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.footer {
+  height: 70px;
+  width: 100%;
+  background-color: #e67e22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .penjual {
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .penjual img {
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: 20px;
+  }
+
+  .penjual {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .penjual img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer {
+    height: 50px;
+  }
+}

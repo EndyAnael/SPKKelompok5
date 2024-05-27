@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deteksi Kelayakan</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="brand">
+      <h1>SPK Kelompok <b>5</b></h1>
+    </div>
+    <div class="toggle-button" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../Deteksi_Kelayakan/index.html">Deteksi Kelayakan Produk</a></li>
+      <li><a href="../Halaman_Penjualan/index.html">Membeli Produk</a></li>
+      <li><a href="../informasi_Kelompok/index.html">Informasi Kelompok</a></li>
+    </ul>
+  </nav>
+
+
+
+  <div class="container">
+    <h1>Deteksi kelayakan Jagung Manis</h1>
+    <form id="decisionForm">
+      <div class="form-list">
+        <div class="label">
+          <label for="taste">Rasa (1-10):</label>
+        </div>
+        <div class="input">
+          <input type="number" id="taste" name="taste" min="1" max="10" required>
+        </div>
+        <div class="label">
+          <label for="texture">Tekstur (1-10):</label>
+        </div>
+        <div class="input">
+          <input type="number" id="texture" name="texture" min="1" max="10" required>
+        </div>
+        <div class="label">
+          <label for="color">Warna (1-10):</label>
+        </div>
+        <div class="input">
+          <input type="number" id="color" name="color" min="1" max="10" required>
+        </div>
+      </div>
+
+      <button type="submit">Deteksi Kelayakan</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <div class="container">
+    <h1>Deteksi kelayakan Batagor Ikan</h1>
+    <form id="decisionForm2">
+      <div class="label">
+        <label for="taste">Jenis Ikan (1-10):</label>
+      </div>
+      <div class="input">
+        <input type="number" id="jenisikan" name="taste" min="1" max="10" required>
+      </div>
+      <div class="label">
+        <label for="texture">Kesegaran Ikan (1-10):</label>
+      </div>
+      <div class="input">
+        <input type="number" id="kesegaranikan" name="texture" min="1" max="10" required>
+      </div>
+      <div class="label">
+        <label for="color">Warna Insang (1-10):</label>
+      </div>
+      <div class="input">
+        <input type="number" id="warnainsang" name="color" min="1" max="10" required>
+      </div>
+      <div class="label">
+        <label for="color">Warna Mata (1-10):</label>
+      </div>
+      <div class="input">
+        <input type="number" id="warnamata" name="color" min="1" max="10" required>
+      </div>
+      <button type="submit">Deteksi Kelayakan</button>
+    </form>
+    <div id="renol"></div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="judul">
+      <h2>Kelompok 5 Technopreneurship</h2>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
